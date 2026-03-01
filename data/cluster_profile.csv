@@ -1,0 +1,8 @@
+,mag,mag,mag,mag,mag,depth,depth,depth,latitude,latitude,longitude,longitude,nst,nst,gap,gap,cluster
+,mean,median,std,min,max,mean,median,std,mean,std,mean,std,mean,median,mean,median,count
+cluster_name,,,,,,,,,,,,,,,,,
+Centro y Pacífico Norte (Superficial),4.6,4.5,0.37,4.1,6.7,30.38,24.01,23.71,6.91,2.5,-77.91,1.87,70.41,45.0,82.55,76.0,517
+Llanos y Piedemonte Orientales,4.53,4.5,0.36,4.1,6.3,19.32,10.0,15.99,8.08,2.86,-71.75,1.66,59.17,39.0,68.62,63.0,336
+Pacífico Sur (Superficial),4.62,4.5,0.43,4.1,7.8,29.31,23.12,22.31,-1.1,1.91,-79.67,1.31,66.33,43.0,104.81,99.5,704
+Santanderes (Nido de Bucaramanga),4.4,4.3,0.25,4.1,6.2,152.46,154.34,15.39,6.7,0.84,-73.27,0.8,67.36,46.0,78.17,71.0,725
+Sur / Ecuador (Nido Profundo),4.58,4.5,0.5,4.1,7.5,139.9,140.28,32.86,-2.11,1.28,-77.57,0.9,108.21,62.0,84.48,80.9,306
