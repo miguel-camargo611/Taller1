@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -280,5 +279,4 @@ elif page == "✅ Desenlace: Solución":
     st.plotly_chart(fig_bar, use_container_width=True)
 
 st.divider()
-
 st.caption("🔬 Taller 1 - Miguel Camargo. K-Means K=5. Datos: USGS / SGC.")
