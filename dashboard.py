@@ -218,17 +218,33 @@ elif page == "✅ Desenlace: Solución":
     # 4. SNAKE PLOT
     st.write("### 🐍 Snake Plot: Diagnóstico de Salud de la Red")
     st.info("Variables estandarizadas (Z-score). Zonas con **Gap** alto y **NST** bajo son prioridades críticas.")
-    
-    snake_long = snake.melt(id_vars='cluster', var_name='Variable', value_name='Valor (Z-score)')
-    # Usar el mapeo dinámico de cluster_id a nombre de región
-    snake_long['Nombre Región'] = snake_long['cluster'].map(cluster_id_to_name_map)
+
+    # --- Agregar Nombre Región al DataFrame snake ---
+    snake['Nombre Región'] = snake['cluster'].map(cluster_id_to_name_map)
+
+    # Convertir a formato largo
+    snake_long = snake.melt(
+        id_vars=['cluster', 'Nombre Región'],
+        var_name='Variable',
+        value_name='Valor (Z-score)'
+    )
 
     fig_snake = px.line(
-        snake_long, x='Variable', y='Valor (Z-score)', color='Nombre Región',
-        color_discrete_map=color_map, markers=True,
-        title="Perfiles de Diagnóstico por Región Sísmica"
+        snake_long,
+        x='Variable',
+        y='Valor (Z-score)',
+        color='Nombre Región',
+        color_discrete_map=color_map,
+        markers=True,
+        title="Perfiles de Diagnóstico por Región Sísmica",
+        template="plotly_white"
     )
-    fig_snake.update_layout(yaxis_title="Variación vs Media (Z-score)", height=450)
+
+    fig_snake.update_layout(
+        yaxis_title="Variación vs Media (Z-score)",
+        height=450
+    )
+
     st.plotly_chart(fig_snake, use_container_width=True)
 
     st.write("---")
@@ -264,4 +280,5 @@ elif page == "✅ Desenlace: Solución":
     st.plotly_chart(fig_bar, use_container_width=True)
 
 st.divider()
+
 st.caption("🔬 Taller 1 - Miguel Camargo. K-Means K=5. Datos: USGS / SGC.")
